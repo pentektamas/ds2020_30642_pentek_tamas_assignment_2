@@ -1,3 +1,5 @@
+package ds2020.assignment2.activityProducer;
+
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.UUID;
@@ -11,8 +13,8 @@ public class SensorData {
 
     public SensorData(UUID patientID, LocalDateTime startTime, LocalDateTime endTime, String activity) {
         this.patient_id = patientID;
-        this.startTime = startTime.until(LocalDateTime.now(), ChronoUnit.SECONDS);
-        this.endTime = endTime.until(LocalDateTime.now(), ChronoUnit.SECONDS);
+        this.startTime = startTime.until(LocalDateTime.of(2020, 11, 13, 16, 0), ChronoUnit.SECONDS);
+        this.endTime = endTime.until(LocalDateTime.of(2020, 11, 13, 16, 0), ChronoUnit.SECONDS);
         this.activity = activity;
     }
 
@@ -46,9 +48,5 @@ public class SensorData {
 
     public void setActivity(String activity) {
         this.activity = activity;
-    }
-
-    public String toString() {
-        return "Patient ID: " + this.patient_id + " Activity: " + this.activity + " Start: " + this.startTime + " End: " + this.endTime;
     }
 }
