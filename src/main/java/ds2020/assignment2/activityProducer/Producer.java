@@ -12,11 +12,17 @@ import java.util.concurrent.TimeoutException;
 public class Producer {
 
     private final static String QUEUE_NAME = "ActivityQueue";
-    private final static String HOST = "localhost";
+    private final static String HOST = "squid.rmq.cloudamqp.com";
+    private final static String V_HOST = "uzlkddss";
+    private final static String USERNAME = "uzlkddss";
+    private final static String PASSWORD = "5LK8YhJlftB2UzjZ-P2nQupLfFmOBWLo";
 
     public static void sendData(List<String> data) {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost(HOST);
+        factory.setVirtualHost(V_HOST);
+        factory.setUsername(USERNAME);
+        factory.setPassword(PASSWORD);
         try (Connection connection = factory.newConnection();
              Channel channel = connection.createChannel()) {
             channel.queueDeclare(QUEUE_NAME, true, false, false, null);

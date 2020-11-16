@@ -17,7 +17,7 @@ import java.util.stream.Stream;
 
 public class SensorDataProcessing {
 
-    private final UUID patientID = UUID.fromString("7dc551fd-bab1-44c6-9789-a86893d38d1f");
+    private final UUID patientID = UUID.fromString("019e8286-a32b-45e4-9e4a-5aec4c41c2c2");
     private final String FILE_NAME = "activity.txt";
 
     public SensorDataProcessing() {
